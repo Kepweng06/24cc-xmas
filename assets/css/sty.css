@@ -191,7 +191,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: 680px;
     padding: 20px;
     display: none; /* Initially hidden */
     z-index: 1000;
@@ -268,7 +268,7 @@ body, html {
         width: 100%;
     }
     .dialog {
-        min-width: 680px;
+        min-width: 100%;
     }
 }
 
