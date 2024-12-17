@@ -13,7 +13,23 @@
 </head>
 <body>
 
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
+    <!-- Modal -->
+    <div class="dialog" id="dialog">
+        <div>
+            <a onclick="closeModal(event)">
+                <img src="./assets/images/lj.png" alt="Link">
+            </a>
+            <i onclick="closeModal(event)">
+                <img src="./assets/images/close.png" alt="Close">
+            </i>
+            <em onclick="closeModal(event)">
+                <img src="./assets/images/tijiao.png" alt="Submit">
+            </em>
+        </div>
+    </div>
 
 
 
@@ -62,8 +78,8 @@
                     <div class="site-address">24H5.cc</div>
                 </div>
                 <div class="enter">
-                    <a href="http://24qp0.com/#" onclick="goH5Url(&#39;24H5.cc&#39;)">
-                        <img src="./assets/images/bg_11.png">
+                    <a href="http://24qp0.com/#" onclick="goH5Url('24H5.cc')">
+                        <img src="./assets/images/bg_11.png" alt="Navigate to 24H5">
                     </a>
                 </div>
             </div>
@@ -74,7 +90,7 @@
                     <div class="site-address" data-src="24H4.cc">24H4.cc</div>
                 </div>
                 <div class="enter">
-                    <a href="http://24qp0.com/#" onclick="goH5Url(&#39;24H4.cc&#39;)">
+                    <a href="http://24qp0.com/#" onclick="goH5Url('24H4.cc')">
                         <img src="./assets/images/bg_11.png">
                     </a>
                 </div>
@@ -86,7 +102,7 @@
                     <div class="site-address">24H3.cc</div>
                 </div>
                 <div class="enter">
-                    <a href="http://24qp0.com/#" onclick="goH5Url(&#39;24H3.cc&#39;)">
+                    <a href="http://24qp0.com/#" onclick="goH5Url('24H3.cc')">
                         <img src="./assets/images/bg_11.png">
                     </a>
                 </div>
@@ -128,18 +144,39 @@
         <div class="kf">
             <a href="http://24kf18.cc/" target="_blank" rel="noopener noreferrer"><img src="./assets/images/kf.png" alt=""></a>
         </div>
-        <div class="dialog" style="display: none;">
+        <!-- <div class="dialog" style="display: none;">
             <div>
                 <a onclick="clos(event,document.querySelector(&#39;.dialog&#39;))"><img src="./assets/images/lj.png" alt=""></a>
                 <i onclick="clos(event,document.querySelector(&#39;.dialog&#39;))"><img src="./assets/images/close.png" alt=""></i>
                 <em onclick="clos(event,document.querySelector(&#39;.dialog&#39;))"><img src="./assets/images/tijiao.png" alt=""></em>
             </div>
-        </div>
+        </div> -->
+        
+        
     </div>
     <script src="./assets/js/swiper.min.js"></script>
     <script type="text/javascript" src="./assets/js/openinstall.js"></script>
     <script type="text/javascript" src="./assets/js/openinstall_source.js"></script>
     <script src="./assets/js/ping.js"></script>
+    <script>
+        // Function to show the modal
+        function showModal() {
+            document.getElementById('dialog').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal(event) {
+            event.preventDefault();
+            document.getElementById('dialog').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Show the modal when the page loads
+        window.addEventListener('load', function () {
+            showModal();
+        });
+    </script>
     <script>
         window.onload = function () {
             runswiper()
@@ -176,7 +213,7 @@
 
         //如果你初始化时没有定义Swiper实例，后面也可以通过Swiper的HTML元素来获取该实例
         function openMask() {
-            const dom = document.querySelector('.mask1')
+            const  dom = document.querySelector('.mask1')
             if (dom.classList.value.split(' ').includes('active')) {
                 dom.classList.remove('active')
             } else {
